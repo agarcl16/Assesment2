@@ -35,7 +35,6 @@ public class UserRepository {
 				return false;
 			}
 		}
-		users.add(user);
-		return true;
+		return users.add(user);
 	}
 }
