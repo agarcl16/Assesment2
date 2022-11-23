@@ -25,4 +25,16 @@ public class UserServiceImpl implements UserService {
 		// TODO Auto-generated method stub
 		return this.userRepository.findUser(user);
 	}
+
+	@Override
+	public boolean findUserByUserName(String user) {
+		// TODO Auto-generated method stub
+		return this.userRepository.findUserByUserName(user);
+	}
+
+	@Override
+	public boolean loginUser(String username, String password) {
+		// TODO Auto-generated method stub
+		return this.userRepository.logingUser(username,password);
+	}
 }

@@ -38,4 +38,22 @@ public class UserRepository {
 		}
 		return false;
 	}
+	public boolean findUserByUserName(String user) {
+		// TODO Auto-generated method stub
+		for(User u: users) {
+			if(u.getUserName().equals(user)) {
+				return true;
+			}
+		}
+		return false;
+	}
+	public boolean logingUser(String username, String password) {
+		// TODO Auto-generated method stub
+		for(User u: users) {
+			if(u.getUserName().equals(username)&&u.getPassword().equals(password)) {
+				return true;
+			}
+		}
+		return false;
+	}
 }

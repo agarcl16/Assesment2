@@ -18,6 +18,13 @@ class ServiceTest {
 	}
 	
 	@Test
+	void testUserRegisterError() {
+		User user = new User("987654", "Pedro", "Pica");
+		UserService serv = new UserServiceImpl();
+		Assert.assertFalse(serv.registerUser(user));
+	}
+	
+	@Test
 	void testFindUser() {
 		User user = new User("123456", "AlexLanero", "123456789");
 		UserService serv = new UserServiceImpl();

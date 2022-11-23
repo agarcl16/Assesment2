@@ -29,8 +29,15 @@ public class UserController {
 
 	@GetMapping("/register/{id}")
 	public boolean register(User user) {
-		if(!this.userService.findUser(user))
+		if(!this.userService.findUser(user) && !this.userService.findUserByUserName(user.getUserName()))
 		return this.userService.registerUser(user);
+		else return false;
+	}
+
+	public boolean login(String username, String password) {
+		// TODO Auto-generated method stub
+		if(this.userService.findUserByUserName(username))
+		return this.userService.loginUser(username, password);
 		else return false;
 	}
 }
