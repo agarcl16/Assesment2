@@ -1,7 +1,11 @@
 package com.assesment2.day2.web;
 
 import com.assesment2.day2.model.User;
+import com.assesment2.day2.service.AccountService;
+import com.assesment2.day2.service.AccountServiceImpl;
 import com.assesment2.day2.service.UserService;
+import com.assesment2.day2.service.UserServiceImpl;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -15,9 +19,18 @@ import org.springframework.web.bind.annotation.RequestMethod;
 public class UserController {
 	@Autowired
 	private UserService userService;
+	@Autowired
+	private AccountService accountService;
+	
+	public UserController() {
+		this.userService = new UserServiceImpl();
+		this.accountService = new AccountServiceImpl();
+	}
 
 	@GetMapping("/register/{id}")
-	public void register(User user) {
-		System.out.println(user.getId());
+	public boolean register(User user) {
+		if(!this.userService.findUser(user))
+		return this.userService.registerUser(user);
+		else return false;
 	}
 }

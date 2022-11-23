@@ -12,18 +12,6 @@ public class AccountServiceImpl implements AccountService{
 	public AccountServiceImpl() {
 		this.accountRepository = new AccountRepository();
 	}
-	
-	@Override
-	public void save(Account account) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public Account findByUserName(String userName) {
-		// TODO Auto-generated method stub
-		return null;
-	}
 
 	@Override
 	public boolean registerAccount(Account account) {

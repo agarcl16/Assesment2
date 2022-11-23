@@ -1,5 +1,6 @@
 package com.assesment2.day2.repository;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.stereotype.Repository;
@@ -15,6 +16,7 @@ public class AccountRepository {
 	private static Account accounts3= new Account("987652", "ES9000246912501234567891",1757.30, "987652");
 
 	public AccountRepository() {
+		accounts = new ArrayList<Account>();
 		accounts.add(accounts1);
 		accounts.add(accounts2);
 		accounts.add(accounts3);

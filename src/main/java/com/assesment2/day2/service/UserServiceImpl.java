@@ -14,21 +14,15 @@ public class UserServiceImpl implements UserService {
 		this.userRepository = new UserRepository();
 	}
 
-	@Override
-	public void save(User user) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public User findByUserName(String userName) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
 	public boolean registerUser(User user) {
 		// TODO Auto-generated method stub
 		return this.userRepository.register(user);
 		
+	}
+
+	@Override
+	public boolean findUser(User user) {
+		// TODO Auto-generated method stub
+		return this.userRepository.findUser(user);
 	}
 }

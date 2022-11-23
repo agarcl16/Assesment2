@@ -20,14 +20,6 @@ public class UserRepository {
 		users.add(user2);
 		users.add(user3);
 	}
-	public User findByUserName(String userName) {
-		for(User user : users) {
-			if(user.getUserName().equals(userName)) {
-				return user;
-			}
-		}
-		return null;
-	}
 	public boolean register(User user) {
 		// TODO Auto-generated method stub
 		for(User u: users) {
@@ -36,5 +28,14 @@ public class UserRepository {
 			}
 		}
 		return users.add(user);
+	}
+	public boolean findUser(User user) {
+		// TODO Auto-generated method stub
+		for(User u: users) {
+			if(u.getId().equals(user.getId())) {
+				return true;
+			}
+		}
+		return false;
 	}
 }

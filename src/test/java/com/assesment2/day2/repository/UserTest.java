@@ -6,10 +6,7 @@ import org.junit.jupiter.api.Test;
 
 import com.assesment2.day2.model.Account;
 import com.assesment2.day2.model.User;
-import com.assesment2.day2.repository.AccountRepository;
-import com.assesment2.day2.repository.UserRepository;
-
-import junit.framework.Assert;
+import org.junit.Assert;
 
 class UserTest {
 
