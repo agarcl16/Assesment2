@@ -9,6 +9,10 @@ import org.springframework.stereotype.Service;
 public class UserServiceImpl implements UserService {
 	@Autowired
 	private UserRepository userRepository;
+	
+	public UserServiceImpl() {
+		this.userRepository = new UserRepository();
+	}
 
 	@Override
 	public void save(User user) {
@@ -20,5 +24,11 @@ public class UserServiceImpl implements UserService {
 	public User findByUserName(String userName) {
 		// TODO Auto-generated method stub
 		return null;
+	}
+
+	public boolean registerUser(User user) {
+		// TODO Auto-generated method stub
+		return this.userRepository.register(user);
+		
 	}
 }

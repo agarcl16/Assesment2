@@ -1,4 +1,4 @@
-package com.assesment2.day2.service;
+package com.assesment2.day2.repository;
 
 import static org.junit.jupiter.api.Assertions.*;
 
