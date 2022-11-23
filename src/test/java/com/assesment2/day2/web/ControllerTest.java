@@ -23,8 +23,10 @@ class ControllerTest {
 	@Test
 	void login() {
 		controller = new UserController();
-		Assert.assertFalse(controller.login("username", "password"));
-		Assert.assertTrue(controller.login("Pedro", "Pica"));
+		User user = new User("123456", "AlexLanero", "123456789");
+		Assert.assertFalse(controller.login(user));
+		User user1 = new User("987654", "Pedro", "Pica");
+		Assert.assertTrue(controller.login(user1));
 	}
 
 }

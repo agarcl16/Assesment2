@@ -30,7 +30,7 @@ public class UserController {
 		this.userService = new UserServiceImpl();
 	}
 
-	@PostMapping("/register")
+	@PostMapping("/user/register")
     @ResponseBody
 	public boolean register(@RequestBody User user) {
 		if(!this.userService.findUser(user) && !this.userService.findUserByUserName(user.getUserName()))
@@ -38,7 +38,7 @@ public class UserController {
 		else return false;
 	}
 
-	@GetMapping("/login/{id}")
+	@GetMapping("/user/login/{id}")
     @ResponseBody
 	public boolean login(@RequestBody User user) {
 		// TODO Auto-generated method stub
